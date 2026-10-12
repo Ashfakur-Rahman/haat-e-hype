@@ -1,61 +1,80 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="Create art with your hands and transform your selfies into pencil sketches. Meet Haat-e-Hype, your browser-based creative studio.">
 
-  <meta
-    name="theme-color"
-    content="#090b10"
-  >
-  <meta
-    name="description"
-    content="Turn your hand into a brush. Create digital art in the air with Haat-e-Hype, a browser-based hand-tracking experience."
-  >
-
-  <title>Haat-e-Hype — Your Hands. Infinite Canvas.</title>
-
+  <title>Haat-e-Hype — Your Hands. Your Art.</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <main class="app-shell">
 
+    <!-- HEADER -->
     <header class="site-header">
       <a class="brand" href="./" aria-label="Haat-e-Hype home">
         <span class="brand-mark" aria-hidden="true">H</span>
         <span>HAAT-E-HYPE<span class="brand-period">.</span></span>
       </a>
 
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#air-studio">Air drawing</a>
+        <a href="#sketch-studio">Selfie sketch</a>
+      </nav>
+
       <div class="header-status">
         <span class="status-indicator" aria-hidden="true"></span>
-        <span>INTERACTIVE ART STUDIO</span>
+        <span>CREATIVE STUDIO</span>
       </div>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
       <p class="eyebrow">
         <span class="eyebrow-line"></span>
-        CREATIVITY WITHOUT CONTACT
+        A DIFFERENT WAY TO CREATE
       </p>
 
       <h1>
         Your hands.<br>
-        <span>Infinite canvas.</span>
+        <span>Your imagination.</span>
       </h1>
 
       <p class="subtitle">
-        No pen. No touch. Just you and the space around you.
-        Turn simple hand movements into something extraordinary.
+        Draw in the air. Turn a photograph into art.
+        Your creativity is the only tool you need.
       </p>
+
+      <div class="hero-actions">
+        <a class="primary-action hero-cta" href="#air-studio">
+          Explore the studio <span aria-hidden="true">↘</span>
+        </a>
+        <a class="secondary-action" href="#sketch-studio">
+          Create a pencil sketch
+        </a>
+      </div>
+
+      <div class="hero-note">
+        <span aria-hidden="true">✳</span>
+        TWO CREATIVE EXPERIENCES. ONE SPACE.
+      </div>
     </section>
 
-    <section class="studio" aria-label="Air drawing studio">
-
+    <!-- AIR DRAWING -->
+    <section
+      class="studio"
+      id="air-studio"
+      aria-labelledby="air-title"
+    >
       <div class="studio-toolbar">
         <div class="studio-heading">
-          <span class="studio-kicker">YOUR WORKSPACE</span>
-          <h2>The canvas</h2>
+          <span class="studio-kicker">01 / MOTION ART</span>
+          <h2 id="air-title">Air drawing<span class="brand-period">.</span></h2>
+          <p>Let your fingertips become the brush.</p>
         </div>
 
         <div class="studio-badge">
@@ -72,17 +91,16 @@
         </div>
 
         <div class="studio-feedback">
-          <h2 id="trackingStatus" aria-live="polite">
+          <h3 id="trackingStatus" aria-live="polite">
             Your canvas awaits.
-          </h2>
-
+          </h3>
           <p id="status" role="status">
             CAMERA NOT STARTED
           </p>
         </div>
 
         <div class="studio-actions">
-          <button id="startBtn" class="primary-action">
+          <button id="startBtn" class="primary-action" type="button">
             <span aria-hidden="true">✳</span>
             Enable Camera &amp; AI
           </button>
@@ -90,20 +108,165 @@
 
         <p class="privacy-note">
           <span aria-hidden="true">◈</span>
-          Your camera feed is processed in your browser.
+          Camera processing runs in your browser.
         </p>
       </div>
 
       <div class="studio-footer">
-        <span>01 / CREATE</span>
-        <span>MOVE YOUR HAND. MAKE SOMETHING.</span>
+        <span>MOVE YOUR HAND</span>
+        <span>MAKE SOMETHING YOURS</span>
       </div>
-
     </section>
 
+    <!-- SELFIE TO SKETCH -->
+    <section
+      class="sketch-studio"
+      id="sketch-studio"
+      aria-labelledby="sketch-title"
+    >
+      <div class="sketch-intro">
+        <div>
+          <span class="studio-kicker">02 / PORTRAIT LAB</span>
+          <h2 id="sketch-title">
+            Selfie to <span>sketch.</span>
+          </h2>
+        </div>
+
+        <p>
+          One photograph. A whole new perspective.
+          Turn your favourite selfie into a pencil-style portrait.
+        </p>
+      </div>
+
+      <div class="sketch-workspace">
+
+        <!-- UPLOAD PANEL -->
+        <div class="upload-panel">
+          <div class="upload-icon" aria-hidden="true">↥</div>
+
+          <h3>Bring your portrait</h3>
+          <p>
+            Choose a photo from your device.
+            For best results, use a clear, well-lit face.
+          </p>
+
+          <label class="upload-button" for="selfieInput">
+            Choose your selfie
+          </label>
+
+          <input
+            id="selfieInput"
+            type="file"
+            accept="image/*"
+            hidden
+          >
+
+          <p class="upload-hint">
+            JPG, PNG or WEBP · Processed in your browser
+          </p>
+        </div>
+
+        <!-- PREVIEW PANELS -->
+        <div class="sketch-results">
+
+          <div class="preview-card">
+            <div class="preview-header">
+              <span>01</span>
+              <h3>Original</h3>
+            </div>
+
+            <div class="preview-frame">
+              <div id="originalPlaceholder" class="preview-placeholder">
+                <span aria-hidden="true">▧</span>
+                <p>Your photo will appear here</p>
+              </div>
+
+              <img
+                id="originalImage"
+                alt="Your original selfie preview"
+                hidden
+              >
+            </div>
+          </div>
+
+          <div class="preview-card">
+            <div class="preview-header">
+              <span>02</span>
+              <h3>Pencil sketch</h3>
+            </div>
+
+            <div class="preview-frame sketch-frame">
+              <div id="sketchPlaceholder" class="preview-placeholder">
+                <span aria-hidden="true">✎</span>
+                <p>Your sketch will appear here</p>
+              </div>
+
+              <canvas
+                id="sketchCanvas"
+                aria-label="Generated pencil sketch preview"
+                hidden
+              ></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- STATUS AND ACTIONS -->
+        <div class="sketch-controls">
+          <p id="sketchStatus" role="status" aria-live="polite">
+            Choose a photo to begin.
+          </p>
+
+          <div class="sketch-actions">
+            <button
+              id="generateSketch"
+              class="primary-action"
+              type="button"
+              disabled
+            >
+              Create pencil sketch
+            </button>
+
+            <button
+              id="downloadSketch"
+              class="secondary-action"
+              type="button"
+              disabled
+            >
+              Download sketch ↗
+            </button>
+
+            <button
+              id="resetSketch"
+              class="text-action"
+              type="button"
+              hidden
+            >
+              Choose another photo
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="sketch-privacy">
+        <span aria-hidden="true">◈</span>
+        Your selected photo is intended to be processed locally in your browser.
+        This feature does not require an external AI API.
+      </p>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="site-footer">
-      <span>HAAT-E-HYPE<span class="brand-period">.</span></span>
-      <span>IMAGINED &amp; BUILT IN BANGLADESH</span>
+      <a class="footer-brand" href="./">
+        HAAT-E-HYPE<span class="brand-period">.</span>
+      </a>
+
+      <p>IMAGINED &amp; BUILT IN BANGLADESH</p>
+
+      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+        BACK TO TOP ↑
+      </a>
     </footer>
 
   </main>
@@ -111,3 +274,4 @@
   <script type="module" src="app.js"></script>
 </body>
 </html>
+```
