@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haat-e-Hype | Hand Tracking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <p class="eyebrow">DAY 1 · COMPUTER VISION</p>
+    <h1>Haat-e-<span>Hype</span></h1>
+    <p class="subtitle">Move your hand. Let AI see it.</p>
+
+    <section class="stage">
+      <div class="camera-box">
+        <video id="camera" autoplay muted playsinline></video>
+        <canvas id="overlay"></canvas>
+      </div>
+
+      <h2 id="trackingStatus">Your canvas awaits.</h2>
+      <p id="status" role="status">CAMERA NOT STARTED</p>
+      <button id="startBtn">Enable Camera & AI</button>
+      <p class="privacy">Camera processing runs in your browser.</p>
+    </section>
+
+    <footer>HAAT-E-HYPE · BUILT IN BANGLADESH</footer>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
