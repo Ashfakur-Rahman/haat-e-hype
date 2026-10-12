@@ -4,30 +4,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haat-e-Hype | Hand Tracking</title>
+
+  <meta
+    name="theme-color"
+    content="#090b10"
+  >
+  <meta
+    name="description"
+    content="Turn your hand into a brush. Create digital art in the air with Haat-e-Hype, a browser-based hand-tracking experience."
+  >
+
+  <title>Haat-e-Hype — Your Hands. Infinite Canvas.</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <p class="eyebrow">DAY 1 · COMPUTER VISION</p>
-    <h1>Haat-e-<span>Hype</span></h1>
-    <p class="subtitle">Move your hand. Let AI see it.</p>
+  <main class="app-shell">
 
-    <section class="stage">
-      <div class="camera-box">
-        <video id="camera" autoplay muted playsinline></video>
-        <canvas id="drawingCanvas"></canvas>
-        <canvas id="overlay"></canvas>
-        
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Haat-e-Hype home">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span>HAAT-E-HYPE<span class="brand-period">.</span></span>
+      </a>
+
+      <div class="header-status">
+        <span class="status-indicator" aria-hidden="true"></span>
+        <span>INTERACTIVE ART STUDIO</span>
       </div>
+    </header>
 
-      <h2 id="trackingStatus">Your canvas awaits.</h2>
-      <p id="status" role="status">CAMERA NOT STARTED</p>
-      <button id="startBtn">Enable Camera & AI</button>
-      <p class="privacy">Camera processing runs in your browser.</p>
+    <section class="hero">
+      <p class="eyebrow">
+        <span class="eyebrow-line"></span>
+        CREATIVITY WITHOUT CONTACT
+      </p>
+
+      <h1>
+        Your hands.<br>
+        <span>Infinite canvas.</span>
+      </h1>
+
+      <p class="subtitle">
+        No pen. No touch. Just you and the space around you.
+        Turn simple hand movements into something extraordinary.
+      </p>
     </section>
 
-    <footer>HAAT-E-HYPE · BUILT IN BANGLADESH</footer>
+    <section class="studio" aria-label="Air drawing studio">
+
+      <div class="studio-toolbar">
+        <div class="studio-heading">
+          <span class="studio-kicker">YOUR WORKSPACE</span>
+          <h2>The canvas</h2>
+        </div>
+
+        <div class="studio-badge">
+          <span class="status-indicator" aria-hidden="true"></span>
+          <span>HAND TRACKING</span>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="camera-box">
+          <video id="camera" autoplay muted playsinline></video>
+          <canvas id="drawingCanvas"></canvas>
+          <canvas id="overlay"></canvas>
+        </div>
+
+        <div class="studio-feedback">
+          <h2 id="trackingStatus" aria-live="polite">
+            Your canvas awaits.
+          </h2>
+
+          <p id="status" role="status">
+            CAMERA NOT STARTED
+          </p>
+        </div>
+
+        <div class="studio-actions">
+          <button id="startBtn" class="primary-action">
+            <span aria-hidden="true">✳</span>
+            Enable Camera &amp; AI
+          </button>
+        </div>
+
+        <p class="privacy-note">
+          <span aria-hidden="true">◈</span>
+          Your camera feed is processed in your browser.
+        </p>
+      </div>
+
+      <div class="studio-footer">
+        <span>01 / CREATE</span>
+        <span>MOVE YOUR HAND. MAKE SOMETHING.</span>
+      </div>
+
+    </section>
+
+    <footer class="site-footer">
+      <span>HAAT-E-HYPE<span class="brand-period">.</span></span>
+      <span>IMAGINED &amp; BUILT IN BANGLADESH</span>
+    </footer>
+
   </main>
 
   <script type="module" src="app.js"></script>
